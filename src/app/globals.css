@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-fallback-start: #f4f4f4;
+  --bg-fallback-mid: #f7e0d1; /* peach/orange muted */
+  --bg-fallback-accent: #0e607a; /* teal/dark blue */
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: #0b1220;
+  background: linear-gradient(120deg, var(--bg-fallback-start) 0%, var(--bg-fallback-mid) 60%, var(--bg-fallback-accent) 100%);
+}
+
+.video-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: saturate(90%) contrast(102%);
+}
+
+.glass {
+  @apply bg-white/60 backdrop-blur-md border border-white/40 shadow-sm;
+}
+
+.button-primary {
+  @apply inline-flex items-center justify-center rounded-md bg-black text-white px-4 py-2 text-sm font-medium transition-colors hover:bg-neutral-800 active:bg-neutral-900 disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.badge {
+  @apply inline-flex items-center gap-1 rounded-full border border-black/10 bg-black/5 px-2.5 py-1 text-[11px] font-medium text-black/70 backdrop-blur-xs;
+}
